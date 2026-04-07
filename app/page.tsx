@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'SecureLink | CCTV & Networking Projects Thika',
-  description: 'Certified CCTV & Internet installation in Thika, Nairobi, and Kiambu. From Home Kits to Apartment Networking.',
+  title: 'SecureLink | CCTV & Networking Projects Kenya',
+  description: 'Certified CCTV & Internet installation in Thika, Nairobi, Kiambu, and Mombasa. From Home Kits to Apartment Networking.',
 }
 
 export default function Home() {
@@ -19,11 +19,11 @@ export default function Home() {
     { cameras: 10, price: "72,000", feat: "Enterprise" }
   ];
 
-  // Using all your photos to show a massive portfolio
-  const allPhotos = [
-    '/work/photo%201.jpeg', '/work/photo%202.jpeg', '/work/photo%203.jpg',
-    '/work/photo%204.jpg', '/work/photo%205.jpeg', '/work/photo%206.jpg',
-    '/work/photo%207.jpeg', '/work/photo%208.jpg', '/work/photo%209.jpg'
+  const galleryPhotos = [
+    { url: '/work/photo1.jpg', title: 'Network Infrastructure' },
+    { url: '/work/photo2.jpg', title: 'Camera Inventory' },
+    { url: '/work/photo3.jpg', title: 'Monitoring Station' },
+    { url: '/work/photo4.jpg', title: 'Turbo HD DVRs' }
   ];
 
   return (
@@ -50,38 +50,32 @@ export default function Home() {
         {/* HERO */}
         <section style={{ textAlign: 'center', marginBottom: '80px', paddingTop: '20px' }}>
           <h1 style={{ fontSize: '3rem', marginBottom: '20px', lineHeight: '1.2' }}>Secure Your Future With <br/><span style={{ color: '#10b981' }}>Expert Technology</span></h1>
-          <p style={{ color: '#94a3b8', maxWidth: '700px', margin: '0 auto 30px' }}>Thika's leading provider for high-definition surveillance and seamless apartment internet infrastructure.</p>
+          <p style={{ color: '#94a3b8', maxWidth: '700px', margin: '0 auto 30px' }}>Leading provider for high-definition surveillance and seamless apartment internet infrastructure across Kenya.</p>
           <a href={`https://wa.me/${myNumber}`} style={{ border: '2px solid #10b981', color: '#10b981', padding: '15px 30px', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>GET FREE CONSULTATION</a>
         </section>
 
-        {/* WHY CHOOSE US (TRUST BUILDER) */}
+        {/* TRUST BUILDERS */}
         <section style={{ maxWidth: '1100px', margin: '0 auto 100px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px' }}>
           <div style={{ padding: '30px', backgroundColor: '#112240', borderRadius: '15px', textAlign: 'center' }}>
              <h3 style={{ color: '#10b981' }}>Professional Finish</h3>
-             <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>We don't just "mount" cameras. We use trunking and conduit to ensure a clean, hidden-wire look that lasts.</p>
+             <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Clean, hidden-wire installations using professional trunking and conduit for maximum security.</p>
           </div>
           <div style={{ padding: '30px', backgroundColor: '#112240', borderRadius: '15px', textAlign: 'center' }}>
              <h3 style={{ color: '#10b981' }}>Remote Access</h3>
-             <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Watch your property from anywhere in the world. We set up high-speed mobile viewing on all your devices.</p>
+             <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Monitor your property from anywhere in the world with specialized mobile viewing configurations.</p>
           </div>
           <div style={{ padding: '30px', backgroundColor: '#112240', borderRadius: '15px', textAlign: 'center' }}>
              <h3 style={{ color: '#10b981' }}>After-Sales Care</h3>
-             <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Got an issue? We offer 12 months of free technical support for app configuration and system maintenance.</p>
+             <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Full 12-month technical support and hardware warranty for complete peace of mind.</p>
           </div>
         </section>
 
-        {/* APARTMENT INTERNET SECTION */}
+        {/* APARTMENT INTERNET */}
         <section id="internet" style={{ maxWidth: '1100px', margin: '0 auto 100px', padding: '50px', backgroundColor: '#112240', borderRadius: '20px', borderRight: '8px solid #10b981' }}>
           <h2 style={{ color: '#10b981', marginTop: 0 }}>Apartment Internet Infrastructure</h2>
           <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#94a3b8' }}>
-            Are you a landlord or property manager? We install structured network cabling and managed WiFi systems for residential blocks. 
-            Deliver high-speed internet to every unit with professional management.
+            Specialized network deployment for residential blocks and commercial buildings. We handle everything from fiber distribution to communal mesh WiFi.
           </p>
-          <ul style={{ color: '#ffffff', marginTop: '20px', lineHeight: '2' }}>
-            <li>✓ Fiber-to-Unit Structured Cabling</li>
-            <li>✓ Communal Area WiFi Mesh</li>
-            <li>✓ High-Speed Load Balancing</li>
-          </ul>
         </section>
 
         {/* CCTV PACKAGES */}
@@ -99,21 +93,38 @@ export default function Home() {
           </div>
         </section>
 
-        {/* MEGA GALLERY */}
+        {/* PROJECT GALLERY */}
         <section style={{ maxWidth: '1100px', margin: '0 auto 100px' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Technical Portfolio</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
-            {allPhotos.map((url, i) => (
-              <img key={i} src={url} alt="SecureLink Work" style={{ width: '100%', height: '250px', objectFit: 'cover', borderRadius: '10px', border: '1px solid #1e293b' }} />
+            {galleryPhotos.map((photo, i) => (
+              <div key={i} style={{ backgroundColor: '#112240', borderRadius: '10px', overflow: 'hidden', border: '1px solid #1e293b' }}>
+                <img 
+                  src={photo.url} 
+                  alt={photo.title} 
+                  style={{ width: '100%', height: '250px', objectFit: 'cover' }} 
+                  onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/400x300/112240/10b981?text=SecureLink+Project"; }}
+                />
+                <p style={{ padding: '10px', textAlign: 'center', fontSize: '0.8rem', color: '#94a3b8' }}>{photo.title}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* MAP & FOOTER */}
+        {/* UPDATED MULTI-LOCATION MAP */}
         <section style={{ maxWidth: '1100px', margin: '0 auto 100px', textAlign: 'center' }}>
-          <h2 style={{ marginBottom: '30px' }}>Serving Kiambu & Nairobi County</h2>
-          <div style={{ width: '100%', height: '350px', borderRadius: '20px', overflow: 'hidden', border: '2px solid #1e293b' }}>
-            <iframe src="http://googleusercontent.com/maps.google.com/thika" width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy"></iframe>
+          <h2 style={{ marginBottom: '30px' }}>National Service Coverage</h2>
+          <p style={{ color: '#94a3b8', marginBottom: '20px' }}>Providing expert technical solutions in Nairobi, Kiambu, and Mombasa.</p>
+          <div style={{ width: '100%', height: '450px', borderRadius: '20px', overflow: 'hidden', border: '2px solid #1e293b' }}>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d1538356.96962283!2d37.9405625!3d-2.6105556!3m2!1i1024!2i768!4f13.1!2m1!1sNairobi%2C%20Kiambu%2C%20Mombasa!5e0!3m2!1sen!2ske!4v1712500000000!5m2!1sen!2ske" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={true} 
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </section>
 

@@ -2,24 +2,11 @@ export default function Home() {
   const myNumber = "254711591610"; // I saw this number in your photo! Change if needed.
 
 const projectPhotos = [
-    // --- YOUR REAL INSTALLATION PHOTOS ---
     { url: '/work/photo%201.jpeg', title: 'Network Infrastructure' },
     { url: '/work/photo%202.jpeg', title: 'Camera Inventory' },
-    { url: '/work/photo%203.jpg', title: 'Hikvision Systems' },
-    { url: '/work/photo%204.jpg', title: 'UNV Stock' },
     { url: '/work/photo%205.jpeg', title: 'Monitoring Station' },
-    { url: '/work/photo%206.jpg', title: 'System Setup' },
-    { url: '/work/photo%207.jpeg', title: 'Turbo HD DVRs' },
-    { url: '/work/photo%208.jpg', title: 'Server Rack' },
-    { url: '/work/photo%209.jpg', title: 'Clean Wiring' },
-
-    // --- CONCEPTUAL/STOCK PHOTOS (Placeholder names) ---
-    // Once you generate or find these, upload them with these names:
-    { url: '/work/new-rack.jpg', title: 'Data Center Solutions' },
-    { url: '/work/new-camera.jpg', title: 'Commercial CCTV' },
-    { url: '/work/new-action.jpg', title: 'Precision Install' }
+    { url: '/work/photo%207.jpeg', title: 'Turbo HD DVRs' }
   ];
-
   return (
     <main style={{ backgroundColor: '#0a192f', color: '#ffffff', minHeight: '100vh', fontFamily: 'sans-serif', padding: '40px 20px' }}>
       

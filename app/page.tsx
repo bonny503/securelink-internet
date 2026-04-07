@@ -116,15 +116,16 @@ export default function Home() {
           <h2 style={{ marginBottom: '30px' }}>National Service Coverage</h2>
           <p style={{ color: '#94a3b8', marginBottom: '20px' }}>Providing expert technical solutions in Nairobi, Kiambu, and Mombasa.</p>
           <div style={{ width: '100%', height: '450px', borderRadius: '20px', overflow: 'hidden', border: '2px solid #1e293b' }}>
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d1538356.96962283!2d37.9405625!3d-2.6105556!3m2!1i1024!2i768!4f13.1!2m1!1sNairobi%2C%20Kiambu%2C%20Mombasa!5e0!3m2!1sen!2ske!4v1712500000000!5m2!1sen!2ske" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen={true} 
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade">
-            </iframe>
+        <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1020703.125!2d37.0!3d-2.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf1741b2b2914c!2sNairobi!5e0!3m2!1sen!2ske!4v1712500000000!5m2!1sen!2ske" 
+  width="100%" 
+  height="100%" 
+  style={{ border: 0 }} 
+  // CRITICAL: Ensure these are written exactly like this for TypeScript:
+  allowFullScreen={true} 
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade">
+</iframe>
           </div>
         </section>
 

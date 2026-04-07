@@ -85,23 +85,38 @@ export default function Home() {
           </div>
         </section>
 
-        {/* PROJECT GALLERY */}
-        <section style={{ maxWidth: '1100px', margin: '0 auto 100px' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Technical Portfolio</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
-            {galleryPhotos.map((photo, i) => (
-              <div key={i} style={{ backgroundColor: '#112240', borderRadius: '10px', overflow: 'hidden', border: '1px solid #1e293b' }}>
-                <img 
-                  src={photo.url} 
-                  alt={photo.title} 
-                  style={{ width: '100%', height: '250px', objectFit: 'cover' }} 
-                  onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/400x300/112240/10b981?text=SecureLink+Project"; }}
-                />
-                <p style={{ padding: '10px', textAlign: 'center', fontSize: '0.8rem', color: '#94a3b8' }}>{photo.title}</p>
-              </div>
-            ))}
+      {/* PROJECT GALLERY - CRASH PROOF VERSION */}
+<section style={{ maxWidth: '1100px', margin: '0 auto 100px' }}>
+  <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Technical Portfolio</h2>
+  <div style={{ 
+    display: 'grid', 
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+    gap: '20px' 
+  }}>
+    {/* The ?.map and (photo && ...) are safety locks to prevent crashing */}
+    {galleryPhotos?.map((photo, i) => (
+      photo && (
+        <div key={i} style={{ backgroundColor: '#112240', borderRadius: '12px', overflow: 'hidden', border: '1px solid #1e293b' }}>
+          <div style={{ width: '100%', height: '220px', position: 'relative', backgroundColor: '#0a192f' }}>
+            <img 
+              src={photo.url || '/work/photo1.jpg'} 
+              alt={photo.title || 'SecureLink Project'} 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+              onError={(e) => {
+                e.currentTarget.src = `https://via.placeholder.com/500x400/112240/10b981?text=${encodeURIComponent(photo.title || 'Image Missing')}`;
+              }}
+            />
           </div>
-        </section>
+          <div style={{ padding: '15px', textAlign: 'center', backgroundColor: '#112240' }}>
+            <p style={{ margin: 0, fontSize: '0.9rem', fontWeight: 'bold', color: '#10b981' }}>
+              {photo.title}
+            </p>
+          </div>
+        </div>
+      )
+    ))}
+  </div>
+</section>
 
         {/* BUILD-SAFE GOOGLE MAP */}
         <section style={{ maxWidth: '1100px', margin: '0 auto 100px', textAlign: 'center' }}>

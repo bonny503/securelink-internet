@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'SecureLink Kenya | CCTV & Apartment WiFi',
   description: 'Expert CCTV and WiFi in Nairobi, Kiambu, and Mombasa. We accept Pi Network, USDT, and RUSD.',
   verification: {
-    // UPDATED WITH YOUR NEW CODE:
+    // THIS IS THE NEW CODE GOOGLE IS LOOKING FOR:
     google: '-wF_69zMEkXBVTYQGG6-D0xhUFsPs2I-cFSBIr99Kr0',
   },
 };

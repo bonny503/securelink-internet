@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 
-// 1. THIS IS THE SEO MAGIC: These tags tell Google what your site is about
 export const metadata: Metadata = {
   title: 'SecureLink | Top CCTV & Networking Services Thika & Nairobi',
   description: 'Professional CCTV installation, WiFi Mesh networking, and security solutions in Thika, Nairobi, and Kiambu. Authorized Hikvision & UNV installer.',
@@ -9,6 +8,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const myNumber = "254704770170"; 
+  const whatsappMsg = encodeURIComponent("Hi SecureLink, I saw your website and I'm interested in a CCTV/Networking quote!");
 
   const projectPhotos = [
     { url: '/work/photo%201.jpeg', title: 'Network Infrastructure' },
@@ -16,8 +16,6 @@ export default function Home() {
     { url: '/work/photo%205.jpeg', title: 'Monitoring Station' },
     { url: '/work/photo%207.jpeg', title: 'Turbo HD DVRs' }
   ];
-
-  const brands = ["Hikvision", "UNV", "Dahua", "TP-Link", "Ubiquiti"];
 
   return (
     <main style={{ backgroundColor: '#0a192f', color: '#ffffff', minHeight: '100vh', fontFamily: 'sans-serif' }}>
@@ -37,80 +35,84 @@ export default function Home() {
           <p style={{ fontSize: '1.2rem', color: '#10b981', fontWeight: 'bold', marginBottom: '10px' }}>
             #1 CCTV & Networking Expert in Thika
           </p>
-          <p style={{ fontSize: '1rem', color: '#94a3b8', marginBottom: '30px', maxWidth: '600px', margin: '0 auto 30px' }}>
-            Secure your home and business with Kenya’s most reliable surveillance and internet specialists.
-          </p>
-          
-          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={`tel:+${myNumber}`} style={{ backgroundColor: '#10b981', color: 'white', padding: '15px 30px', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold', boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.39)' }}>📞 Call Specialist</a>
-            <a href={`https://wa.me/${myNumber}`} target="_blank" style={{ backgroundColor: '#25D366', color: 'white', padding: '15px 30px', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>💬 WhatsApp Quote</a>
+          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '30px' }}>
+            <a href={`tel:+${myNumber}`} style={{ backgroundColor: '#10b981', color: 'white', padding: '15px 30px', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>📞 Call Specialist</a>
+            <a href={`https://wa.me/${myNumber}?text=${whatsappMsg}`} target="_blank" style={{ backgroundColor: '#25D366', color: 'white', padding: '15px 30px', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>💬 WhatsApp Quote</a>
           </div>
         </section>
 
-        {/* BRANDS SECTION */}
-        <section style={{ maxWidth: '1000px', margin: '0 auto 80px', textAlign: 'center' }}>
-          <p style={{ color: '#64748b', fontSize: '0.8rem', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '2px' }}>Authorized Equipment Installer</p>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '30px' }}>
-            {brands.map((brand) => (
-              <span key={brand} style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#475569' }}>{brand}</span>
-            ))}
+        {/* BRANDS Section */}
+        <section style={{ maxWidth: '1000px', margin: '0 auto 60px', textAlign: 'center', opacity: 0.6 }}>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '30px', fontWeight: 'bold', color: '#94a3b8' }}>
+            <span>HIKVISION</span><span>UNV</span><span>DAHUA</span><span>TP-LINK</span><span>UBIQUITI</span>
           </div>
         </section>
 
-        {/* Gallery Section */}
+        {/* Gallery */}
         <section style={{ maxWidth: '1000px', margin: '0 auto 80px' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Real Projects, Real Results</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
             {projectPhotos.map((photo, index) => (
               <div key={index} style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #1e293b', backgroundColor: '#112240' }}>
                 <img src={photo.url} alt={photo.title} style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
-                <p style={{ textAlign: 'center', padding: '12px', fontSize: '0.9rem', color: '#94a3b8' }}>{photo.title}</p>
+                <p style={{ textAlign: 'center', padding: '12px', fontSize: '0.8rem', color: '#94a3b8' }}>{photo.title}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Pricing & "Attraction" Cards */}
+        {/* GUARANTEES (THE NEW STUFF) */}
+        <section style={{ maxWidth: '1000px', margin: '0 auto 80px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', textAlign: 'center' }}>
+          <div style={{ padding: '20px', border: '1px border #1e293b' }}>
+            <h4 style={{ color: '#10b981' }}>🛡️ 1-Year Warranty</h4>
+            <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Full replacement guarantee on all Hikvision and UNV hardware we install.</p>
+          </div>
+          <div style={{ padding: '20px', border: '1px border #1e293b' }}>
+            <h4 style={{ color: '#10b981' }}>🔧 Lifetime Support</h4>
+            <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Need help with your mobile app? Call us anytime for free remote assistance.</p>
+          </div>
+          <div style={{ padding: '20px', border: '1px border #1e293b' }}>
+            <h4 style={{ color: '#10b981' }}>⚡ Fast Turnaround</h4>
+            <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Book today, get installed tomorrow. We value your security and time.</p>
+          </div>
+        </section>
+
+        {/* Pricing */}
         <section style={{ maxWidth: '900px', margin: '0 auto 80px' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Best Value in Central Kenya</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
             <div style={{ padding: '40px 30px', borderRadius: '16px', backgroundColor: '#112240', border: '2px solid #10b981', position: 'relative' }}>
-              <span style={{ position: 'absolute', top: '-15px', right: '20px', backgroundColor: '#10b981', color: 'white', padding: '5px 15px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: 'bold' }}>POPULAR</span>
-              <h3 style={{ color: '#10b981', marginTop: 0 }}>Home Security</h3>
+              <span style={{ position: 'absolute', top: '-15px', right: '20px', backgroundColor: '#10b981', color: 'white', padding: '5px 15px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: 'bold' }}>HOME PACKAGE</span>
+              <h3 style={{ color: '#10b981', marginTop: 0 }}>Basic Installation</h3>
               <p style={{ fontSize: '2.2rem', fontWeight: 'bold', margin: '15px 0' }}>KES 3,500</p>
-              <ul style={{ listStyle: 'none', padding: 0, color: '#94a3b8', lineHeight: '2.2' }}>
-                <li>✅ Professional Installation</li>
-                <li>✅ 1 Year Warranty</li>
-                <li>✅ Mobile App Access</li>
+              <ul style={{ listStyle: 'none', padding: 0, color: '#94a3b8', lineHeight: '2.2', fontSize: '0.9rem' }}>
+                <li>✅ CCTV Setup & Cabling</li>
+                <li>✅ Mobile App Integration</li>
+                <li>✅ System Testing</li>
               </ul>
             </div>
 
             <div style={{ padding: '40px 30px', borderRadius: '16px', backgroundColor: '#112240', border: '1px solid #1e293b' }}>
-              <h3 style={{ color: '#10b981', marginTop: 0 }}>Office Networking</h3>
+              <h3 style={{ color: '#10b981', marginTop: 0 }}>Business Networking</h3>
               <p style={{ fontSize: '2.2rem', fontWeight: 'bold', margin: '15px 0' }}>KES 4,000</p>
-              <ul style={{ listStyle: 'none', padding: 0, color: '#94a3b8', lineHeight: '2.2' }}>
-                <li>✅ Zero Dead-Zone WiFi</li>
+              <ul style={{ listStyle: 'none', padding: 0, color: '#94a3b8', lineHeight: '2.2', fontSize: '0.9rem' }}>
+                <li>✅ High-Speed WiFi Mesh</li>
                 <li>✅ Structured Cabling</li>
-                <li>✅ Business Support</li>
+                <li>✅ Multi-User Optimization</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Service Area / SEO Section */}
+        {/* Map */}
         <section style={{ maxWidth: '1000px', margin: '0 auto 80px', textAlign: 'center' }}>
-          <h2 style={{ marginBottom: '20px' }}>Areas We Serve</h2>
-          <p style={{ color: '#94a3b8', marginBottom: '30px' }}>Dedicated support in <b>Thika Town</b>, <b>Nairobi CBD</b>, <b>Ruiru</b>, <b>Juja</b>, and <b>Kiambu County</b>.</p>
-          <div style={{ width: '100%', height: '350px', borderRadius: '16px', overflow: 'hidden', border: '1px solid #1e293b' }}>
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.48395561008!2d36.98066565!3d-1.04231685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f4e5b27c619d7%3A0x863335509761922!2sThika!5e0!3m2!1sen!2ske!4v1712500000000!5m2!1sen!2ske" 
-              width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy"
-            ></iframe>
+          <h2 style={{ marginBottom: '10px' }}>Our Service Area</h2>
+          <p style={{ color: '#94a3b8', marginBottom: '30px' }}>Thika Town • Nairobi CBD • Ruiru • Juja • Kiambu</p>
+          <div style={{ width: '100%', height: '300px', borderRadius: '16px', overflow: 'hidden', border: '1px solid #1e293b' }}>
+            <iframe src="http://googleusercontent.com/maps.google.com/2" width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy"></iframe>
           </div>
         </section>
 
-        <footer style={{ textAlign: 'center', color: '#64748b', borderTop: '1px solid #1e293b', paddingTop: '30px' }}>
-          <p>© 2026 SecureLink Internet & CCTV Services. Trusted Technicians in Kenya.</p>
+        <footer style={{ textAlign: 'center', color: '#64748b', borderTop: '1px solid #1e293b', paddingTop: '30px', paddingBottom: '30px' }}>
+          <p>© 2026 SecureLink Internet & CCTV Services. Trusted Tech Professionals.</p>
         </footer>
       </div>
     </main>

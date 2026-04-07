@@ -101,20 +101,29 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FIXED MAP SECTION */}
-        <section style={{ maxWidth: '1100px', margin: '0 auto 100px', textAlign: 'center' }}>
-          <h2 style={{ marginBottom: '20px' }}>Service Areas</h2>
-          <div style={{ width: '100%', height: '400px', borderRadius: '20px', overflow: 'hidden', border: '2px solid #1e293b', backgroundColor: '#112240' }}>
-            {isClient ? (
-              <iframe 
-                src="https://maps.google.com/?cid=14655148302913297242&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ1" 
-                width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            ) : (
-              <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading Coverage Map...</div>
-            )}
-          </div>
-        </section>
+      {/* FIXED GOOGLE MAP SECTION */}
+<section style={{ maxWidth: '1100px', margin: '0 auto 100px', textAlign: 'center' }}>
+  <h2 style={{ marginBottom: '20px' }}>National Service Coverage</h2>
+  <p style={{ color: '#94a3b8', marginBottom: '30px' }}>Expert installations across Nairobi, Kiambu, and Mombasa.</p>
+  
+  <div style={{ width: '100%', height: '450px', borderRadius: '20px', overflow: 'hidden', border: '2px solid #1e293b', backgroundColor: '#112240' }}>
+    {isClient ? (
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2042000.0000000000!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d807106093%3A0x10b981!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1712500000000!5m2!1sen!2ske" 
+        width="100%" 
+        height="100%" 
+        style={{ border: 0 }} 
+        allowFullScreen={true} 
+        loading="lazy" 
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    ) : (
+      <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8' }}>
+        Loading SecureLink Coverage Map...
+      </div>
+    )}
+  </div>
+</section>
 
         <footer style={{ textAlign: 'center', color: '#475569', paddingBottom: '40px' }}>
           <p style={{ fontWeight: 'bold', color: '#94a3b8' }}>SECURELINK KENYA</p>

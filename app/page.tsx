@@ -96,20 +96,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/* MAP SECTION */}
-        <section style={{ maxWidth: '1100px', margin: '0 auto 100px', textAlign: 'center' }}>
-          <h2 style={{ marginBottom: '30px' }}>National Service Coverage</h2>
-          <div style={{ width: '100%', height: '450px', borderRadius: '20px', overflow: 'hidden', border: '2px solid #1e293b', backgroundColor: '#112240' }}>
-            {isClient ? (
-              <iframe 
-                src="https://maps.google.com/maps/contrib/111727268067469645722" 
-                width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            ) : (
-              <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading Maps...</div>
-            )}
-          </div>
-        </section>
+       {/* BUILD-SAFE GOOGLE MAP */}
+<section style={{ maxWidth: '1100px', margin: '0 auto 100px', textAlign: 'center' }}>
+  <h2 style={{ marginBottom: '30px' }}>National Service Coverage</h2>
+  <div style={{ width: '100%', height: '450px', borderRadius: '20px', overflow: 'hidden', border: '2px solid #1e293b', backgroundColor: '#112240' }}>
+    {isClient ? (
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1021151.789230553!2d36.5684497!3d-1.2920659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d4997%3A0xf7cf0254da4df92e!2sNairobi!5e0!3m2!1sen!2ske!4v1712500000000!5m2!1sen!2ske" 
+        width="100%" 
+        height="100%" 
+        style={{ border: 0 }} 
+        allowFullScreen={true} 
+        loading="lazy" 
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    ) : (
+      <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8' }}>
+        Loading Map...
+      </div>
+    )}
+  </div>
+</section>
 
         <footer style={{ textAlign: 'center', color: '#475569', paddingBottom: '60px' }}>
           <p style={{ fontWeight: 'bold', color: '#94a3b8' }}>SECURELINK KENYA</p>

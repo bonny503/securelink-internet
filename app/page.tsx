@@ -1,7 +1,7 @@
 export default function Home() {
   const myNumber = "254711591610"; // I saw this number in your photo! Change if needed.
 
-  const projectPhotos = [
+const projectPhotos = [
     { url: '/work/photo%201.jpeg', title: 'Network Infrastructure' },
     { url: '/work/photo%202.jpeg', title: 'Camera Inventory' },
     { url: '/work/photo%203.jpg', title: 'Hikvision Systems' },

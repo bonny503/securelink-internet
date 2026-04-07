@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const myNumber = "254704770170"; 
-  const whatsappMsg = encodeURIComponent("Hi SecureLink, I saw your website and I'm interested in a CCTV/Networking quote!");
+  const whatsappMsg = encodeURIComponent("Hi SecureLink, I saw your website and I'm interested in the 3-CCTV Camera Kit for KES 20,000!");
 
   const projectPhotos = [
     { url: '/work/photo%201.jpeg', title: 'Network Infrastructure' },
@@ -48,8 +48,43 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FEATURED KITS (NEW SECTION) */}
+        <section style={{ maxWidth: '1000px', margin: '0 auto 80px' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Complete CCTV Kits</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
+            
+            {/* 3 Camera Kit */}
+            <div style={{ padding: '30px', borderRadius: '16px', backgroundColor: '#1e293b', border: '2px solid #10b981', textAlign: 'center' }}>
+              <h3 style={{ color: '#10b981', margin: 0 }}>3-Camera Full Kit</h3>
+              <p style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '15px 0' }}>KES 20,000</p>
+              <ul style={{ listStyle: 'none', padding: 0, color: '#94a3b8', textAlign: 'left', display: 'inline-block', lineHeight: '2' }}>
+                <li>✅ 3× Full HD Night Vision Cameras</li>
+                <li>✅ 4-Channel High-Speed DVR</li>
+                <li>✅ Power Supply & All Connectors</li>
+                <li>✅ Mobile App Remote Viewing</li>
+                <li>📦 <b>Hardware + Full Installation</b></li>
+              </ul>
+            </div>
+
+            {/* 4 Camera Kit */}
+            <div style={{ padding: '30px', borderRadius: '16px', backgroundColor: '#112240', border: '1px solid #1e293b', textAlign: 'center' }}>
+              <h3 style={{ color: '#94a3b8', margin: 0 }}>4-Camera Full Kit</h3>
+              <p style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '15px 0' }}>KES 25,500</p>
+              <ul style={{ listStyle: 'none', padding: 0, color: '#94a3b8', textAlign: 'left', display: 'inline-block', lineHeight: '2' }}>
+                <li>✅ 4× Full HD Night Vision Cameras</li>
+                <li>✅ 4-Channel High-Speed DVR</li>
+                <li>✅ Power Supply & Cabling</li>
+                <li>✅ Mobile App Remote Viewing</li>
+                <li>📦 <b>Hardware + Full Installation</b></li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+
         {/* Gallery */}
         <section style={{ maxWidth: '1000px', margin: '0 auto 80px' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Recent Work</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
             {projectPhotos.map((photo, index) => (
               <div key={index} style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #1e293b', backgroundColor: '#112240' }}>
@@ -60,54 +95,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* GUARANTEES (THE NEW STUFF) */}
-        <section style={{ maxWidth: '1000px', margin: '0 auto 80px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', textAlign: 'center' }}>
-          <div style={{ padding: '20px', border: '1px border #1e293b' }}>
-            <h4 style={{ color: '#10b981' }}>🛡️ 1-Year Warranty</h4>
-            <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Full replacement guarantee on all Hikvision and UNV hardware we install.</p>
-          </div>
-          <div style={{ padding: '20px', border: '1px border #1e293b' }}>
-            <h4 style={{ color: '#10b981' }}>🔧 Lifetime Support</h4>
-            <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Need help with your mobile app? Call us anytime for free remote assistance.</p>
-          </div>
-          <div style={{ padding: '20px', border: '1px border #1e293b' }}>
-            <h4 style={{ color: '#10b981' }}>⚡ Fast Turnaround</h4>
-            <p style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Book today, get installed tomorrow. We value your security and time.</p>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section style={{ maxWidth: '900px', margin: '0 auto 80px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
-            <div style={{ padding: '40px 30px', borderRadius: '16px', backgroundColor: '#112240', border: '2px solid #10b981', position: 'relative' }}>
-              <span style={{ position: 'absolute', top: '-15px', right: '20px', backgroundColor: '#10b981', color: 'white', padding: '5px 15px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: 'bold' }}>HOME PACKAGE</span>
-              <h3 style={{ color: '#10b981', marginTop: 0 }}>Basic Installation</h3>
-              <p style={{ fontSize: '2.2rem', fontWeight: 'bold', margin: '15px 0' }}>KES 3,500</p>
-              <ul style={{ listStyle: 'none', padding: 0, color: '#94a3b8', lineHeight: '2.2', fontSize: '0.9rem' }}>
-                <li>✅ CCTV Setup & Cabling</li>
-                <li>✅ Mobile App Integration</li>
-                <li>✅ System Testing</li>
-              </ul>
-            </div>
-
-            <div style={{ padding: '40px 30px', borderRadius: '16px', backgroundColor: '#112240', border: '1px solid #1e293b' }}>
-              <h3 style={{ color: '#10b981', marginTop: 0 }}>Business Networking</h3>
-              <p style={{ fontSize: '2.2rem', fontWeight: 'bold', margin: '15px 0' }}>KES 4,000</p>
-              <ul style={{ listStyle: 'none', padding: 0, color: '#94a3b8', lineHeight: '2.2', fontSize: '0.9rem' }}>
-                <li>✅ High-Speed WiFi Mesh</li>
-                <li>✅ Structured Cabling</li>
-                <li>✅ Multi-User Optimization</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Map */}
+        {/* Service Area / SEO Section */}
         <section style={{ maxWidth: '1000px', margin: '0 auto 80px', textAlign: 'center' }}>
           <h2 style={{ marginBottom: '10px' }}>Our Service Area</h2>
           <p style={{ color: '#94a3b8', marginBottom: '30px' }}>Thika Town • Nairobi CBD • Ruiru • Juja • Kiambu</p>
           <div style={{ width: '100%', height: '300px', borderRadius: '16px', overflow: 'hidden', border: '1px solid #1e293b' }}>
-            <iframe src="http://googleusercontent.com/maps.google.com/2" width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy"></iframe>
+            <iframe src="http://googleusercontent.com/maps.google.com/3" width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy"></iframe>
           </div>
         </section>
 
